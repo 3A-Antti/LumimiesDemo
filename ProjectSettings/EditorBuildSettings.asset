@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: "Assets/Scenes/tontunN\xE4k\xF6.unity"
+    guid: ecfeebf8d90ee5940b122ebaa753e091
+  - enabled: 1
+    path: Assets/Scenes/mainMenu.unity
+    guid: 059f84c1e556681448689e51464aca0c
   m_configObjects: {}
