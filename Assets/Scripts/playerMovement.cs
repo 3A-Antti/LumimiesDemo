@@ -57,4 +57,9 @@ public class playerMovement : MonoBehaviour
             transform.position += transform.up * Time.deltaTime * moveSpeed;
         }
     }
+
+    private void OnTriggerEnter2D() 
+    {
+        
+    }
 }
