@@ -16,7 +16,7 @@ public class playerMovement : MonoBehaviour
     { // Update is called once per frame
         if (Input.GetKey(KeyCode.Escape))
         {
-            SceneManager.LoadScene("mainMenu");
+            exitGame();
         }
     }
 
@@ -61,5 +61,10 @@ public class playerMovement : MonoBehaviour
     private void OnTriggerEnter2D() 
     {
         
+    }
+
+    public void exitGame()
+    {
+        SceneManager.LoadScene("mainMenu");
     }
 }

@@ -8,8 +8,10 @@ public class searchItem : MonoBehaviour
     public int currentProgress;
 
     bool searching = false;
+    int destroyCount = 0;
 
     public progressBar progressBar;
+    public playerMovement playerMovement;
     public Transform target;
 
     void Start()
@@ -23,6 +25,11 @@ public class searchItem : MonoBehaviour
         if (searching)
         {
             addProgress(5, searching);
+        }
+
+        if (destroyCount == 1)
+        {
+            playerMovement.exitGame();
         }
     }
 
@@ -57,7 +64,10 @@ public class searchItem : MonoBehaviour
 
             if (currentProgress == 640)
             {
+                destroyCount = destroyCount + 1;
                 Destroy(this.gameObject);
+                
+                print(destroyCount);
             }
         }
     }
