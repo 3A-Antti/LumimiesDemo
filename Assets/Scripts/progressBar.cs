@@ -15,5 +15,6 @@ public class progressBar : MonoBehaviour
     public void setProgress(int progress)
     {
         slider.value = progress;
+        print(slider.value);
     }
 }

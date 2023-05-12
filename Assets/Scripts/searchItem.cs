@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class searchItem : MonoBehaviour
 {
-    public int completionProgress = 320;
+    public int completionProgress = 80;
     public int currentProgress;
 
     bool searching = false;
@@ -22,7 +22,7 @@ public class searchItem : MonoBehaviour
     { // Update is called once per frame
         if (searching)
         {
-            addProgress(1, searching);
+            addProgress(5, searching);
         }
     }
 
@@ -53,7 +53,12 @@ public class searchItem : MonoBehaviour
         {
             currentProgress += giveProgress;
 
-            progressBar.setProgress(currentProgress); 
+            progressBar.setProgress(currentProgress);
+
+            if (currentProgress == 640)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
