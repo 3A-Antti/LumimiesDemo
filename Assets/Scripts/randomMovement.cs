@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class randomMovement : MonoBehaviour
 {
+    playerMovement PlayerMovement;
+
     float moveSpeed = 5f;
     float rotSpeed  = 0.75f;
 
     void Start()
     {
+        PlayerMovement = GameObject.Find("PLAYER").GetComponent<playerMovement>();
+
         transform.Rotate(0, 0, -90f);
     }
 
@@ -22,5 +26,7 @@ public class randomMovement : MonoBehaviour
     {
         moveSpeed = 0f;
         rotSpeed  = 0f;
+
+        PlayerMovement.exitGame();
     }
 }
