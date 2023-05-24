@@ -9,6 +9,8 @@ public class randomMovement : MonoBehaviour
     float moveSpeed = 5f;
     float rotSpeed  = 0.75f;
 
+    bool freezeCheck = false;
+
     void Start()
     {
         PlayerMovement = GameObject.Find("PLAYER").GetComponent<playerMovement>();
@@ -24,9 +26,14 @@ public class randomMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        moveSpeed = 0f;
-        rotSpeed  = 0f;
+        if (!freezeCheck)
+        {
+            moveSpeed = 0f;
+            rotSpeed  = 0f;
+        
+            freezeCheck = true;
 
-        PlayerMovement.exitGame();
+            PlayerMovement.destroyCounter();
+        }
     }
 }

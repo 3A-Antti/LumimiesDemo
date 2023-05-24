@@ -10,16 +10,6 @@ public class searchItem : MonoBehaviour
     public int currentProgress;
 
     bool searching = false;
-    bool sD0 = false;
-    bool sD1 = false;
-    bool sD2 = false;
-    bool sD3 = false;
-    bool sD4 = false;
-    bool sD5 = false;
-    bool sD6 = false;
-    bool sD7 = false;
-    bool sD8 = false;
-    int destroyCount = 0;
 
     public progressBar progressBar;
     public Transform target;
@@ -37,11 +27,6 @@ public class searchItem : MonoBehaviour
         if (searching)
         {
             addProgress(5, searching);
-        }
-
-        if (sD0)
-        {
-            PlayerMovement.exitGame();
         }
     }
 
@@ -76,62 +61,10 @@ public class searchItem : MonoBehaviour
 
             if (currentProgress == 640)
             {
-                Abomination();
+                PlayerMovement.destroyCounter();
 
                 Destroy(this.gameObject);
             }
         }
-    }
-
-    void Abomination()
-    {
-        if (!sD0)
-        {
-            sD0 = true;
-        }
-
-        /*if (sD0)
-        {
-            if (sD1)
-            {
-                if (sD2)
-                {
-                    if (sD3)
-                    {
-                        if (sD4)
-                        {
-                            if (sD5)
-                            {
-                                if (sD6)
-                                {
-                                    if (sD7)
-                                    {
-                                        sD8 = sD7;
-                                    }
-
-                                    sD7 = sD6;
-                                }
-
-                                sD6 = sD5;
-                            }
-
-                            sD5 = sD4;
-                        }
-
-                        print("sD4 = " + sD4);
-                        sD4 = sD3;
-                        print("sD4 = " + sD4);
-                    }
-
-                    sD3 = sD2;
-                }
-
-                sD2 = sD1;
-            }
-
-            print("sD1 = " + sD1);
-            sD1 = sD0;
-            print("sD1 = " + sD1);
-        }*/
     }
 }
